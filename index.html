@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>João Saramago</title>
+    <meta name="description" content="João Saramago online professional resume.">
+    <meta name="author" content="João Saramago">
+    <meta name="keywords"
+          content="joao, saramago, joao saramago, developer, web developer, portugal, website, curriculum">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#fff"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+<a id="to-top-btn" class="scrollTo" href="#top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <g>
+            <path fill="#000000" d="M3.352,48.296l28.56-28.328l28.58,28.347c0.397,0.394,0.917,0.59,1.436,0.59c0.52,0,1.04-0.196,1.436-0.59   c0.793-0.787,0.793-2.062,0-2.849l-29.98-29.735c-0.2-0.2-0.494-0.375-0.757-0.475c-0.75-0.282-1.597-0.107-2.166,0.456   L0.479,45.447c-0.793,0.787-0.793,2.062,0,2.849C1.273,49.082,2.558,49.082,3.352,48.296z"></path>
+        </g>
+    </svg>
+</a>
+
+<header id="top">
+    <nav>
+        <div class="right">
+            <div id="menu">
+                <a class="scrollTo" href="#about">SOBRE</a>
+                <a class="scrollTo" href="#porfolio">PORTFÓLIO</a>
+                <a class="scrollTo" href="#contact">CONTACTO</a>
+                <a class="cv-btn" href="#contact">DOWNLOAD CV</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars">X</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="avatar-wrapper">
+        <img src="img/avatar.jpg"/>
+        <h1>João Saramago</h1>
+        <h4>Estudante em Engenharia Informática</h4>
+    </div>
+</header>
+
+<section id="about">
+    <div class="content">
+
+        <h2>Sobre</h2>
+
+        <div class="row info-box">
+            <div class="col-sm-4">
+                <h3>Educação</h3>
+            </div>
+            <div class="col-sm-8">
+                <p class="stand-out">Licenciatura em Engenharia Informática</p>
+                <p class="small">ISCTE-IUL, 2016 - presente</p>
+            </div>
+        </div>
+
+        <div class="row info-box">
+            <div class="col-sm-4">
+                <h3>Experiência</h3>
+            </div>
+            <div class="col-sm-8">
+                <p class="stand-out">Desenvolvedor Full Stack na <a href="http://www.proregatta.com" target="_blank">Proregatta</a></p>
+                <p class="small">novembro 2018 - presente</p>
+                <p>Desenvolvimento de uma plataforma de tracking e gestão de clubes para o desporto da Vela. #TODO</p>
+            </div>
+        </div>
+
+        <div class="row info-box">
+            <div class="col-sm-4">
+                <h3>Tecnologias</h3>
+            </div>
+            <div class="col-sm-4">
+                <p class="stand-out">Mais confortável</p>
+                <ul>
+                    <li>HTML / CSS</li>
+                    <li>JavaScript / jQuery / AJAX</li>
+                    <li>Python / Django</li>
+                    <li>Version Control ( GIT )</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                    <li>Bash</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <p class="stand-out">Menos confortável</p>
+                <ul>
+                    <li>C</li>
+                    <li>#TODO</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row info-box">
+            <div class="col-sm-4">
+                <h3>Interesses</h3>
+            </div>
+            <div class="col-sm-4">
+                <p class="stand-out">Profissionais</p>
+                <ul>
+                    <li>Desenvolvimento Web</li>
+                    <li>Robótica</li>
+                    <li>Inteligência Artificial</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <p class="stand-out">Pessoais</p>
+                <ul>
+                    <li>Viajar</li>
+                    <li>#TODO</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="porfolio">
+    <div class="content">
+
+        <h2>Portfólio</h2>
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="content">
+
+        <h2>Contacto</h2>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2019 João Saramago. Todos os direitos reservados..</p>
+</footer>
+
+</body>
+
+<script>
+    function myFunction() {
+        var x = document.getElementsByTagName("nav")[0];
+        if (x.className === "") {
+            x.className += "responsive";
+        } else {
+            x.className = "";
+        }
+    }
+
+    $('.scrollTo').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+        }, 500);
+        return false;
+    });
+</script>
+
+</html>
