@@ -22,14 +22,14 @@
 
 <body>
 
-<a id="to-top-btn" class="scrollTo" href="#top">
+<a id="to-top-btn" class="scrollTo arrow-down" href="#about1">
     <svg viewBox="0 0 64 64">
         <use xlink:href="svg/ui-icons.svg#up-arrow"></use>
     </svg>
 </a>
 
 <header id="top">
-    <nav>
+    <nav class="fade-in">
         <div id="menu-btn" class="icon">
             <div class="menu-btn-box">
                 <div class="menu-btn-inner"></div>
@@ -37,64 +37,84 @@
         </div>
         <div class="right">
             <div id="menu">
-                <a class="scrollTo" href="#about">SOBRE</a>
-                <a class="scrollTo" href="#porfolio">PORTFÓLIO</a>
+                <a class="scrollTo" href="#about1">SOBRE</a>
+                <a class="scrollTo" href="#portfolio">PORTFÓLIO</a>
                 <a class="scrollTo" href="#contact">CONTACTO</a>
-                <a class="cv-btn" href="">DESCARREGAR CV</a>
+                <a class="cv-btn" href="">DESCARREGAR RESUMO</a>
 
             </div>
         </div>
     </nav>
 
     <div class="avatar-wrapper">
-        <img src="img/avatar.jpg"/>
-        <h1>João Saramago</h1>
-        <h4>Estudante em Engenharia Informática</h4>
+        <img id="avatar-img" class="zoom-out" src="img/avatar.jpg"/>
+        <h1 id="avatar-name" class="zoom-out">João Saramago</h1>
+        <h5 id="avatar-second" class="zoom-out">Desenvolvedor Full Stack</h5>
     </div>
 </header>
 
-<section id="about">
+<section id="about1">
     <div class="content">
 
-        <h2>Sobre</h2>
+        <h2>SOBRE</h2>
+
+        <div class="row">
+            <div class="info-box" style="animation-delay: 0.2s">
+                <img id="about-img" src="img/avatar.jpg"/>
+                <div class="about-me-box">
+                    <h4>Quem sou eu?</h4>
+                    <p>
+                        Estou atualmente a acabar a minha licenciatura em Engenharia Informatica
+                        no ISCTE e a trabalhar em part-time como desenvolvedor full stack para a
+                        Proregatta.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="about2">
+    <div class="content">
 
         <div class="row info-box">
             <div class="col-sm-4">
-                <h3>Educação</h3>
+                <h3 class="info-box-title">Educação</h3>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-8 info-box-content">
                 <p class="semi-bold">Licenciatura em Engenharia Informática</p>
-                <p class="small">ISCTE-IUL, 2016 - presente</p>
+                <p class="small">ISCTE-IUL, setembro 2016 - presente</p>
             </div>
         </div>
 
         <div class="row info-box">
             <div class="col-sm-4">
-                <h3>Experiência</h3>
+                <h3 class="info-box-title" style="animation-delay: 0.2s">Experiência</h3>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-8 info-box-content" style="animation-delay: 0.2s">
                 <p class="semi-bold">Desenvolvedor Web ( Full Stack ) na <a href="http://www.proregatta.com" target="_blank">Proregatta</a></p>
                 <p class="small">novembro 2018 - presente</p>
-                <p>Desenvolvimento de app's, hardware e plataforma web de gestão de clubes, campeonatos e treinos para o desporto da Vela. A plataforma web premite a criação, gestão e acompanhamento em tempo real de campeonatos, tal como a gestão interna de clubes de Vela e visualização de treinos feitos pelo utilizador. As tecnologias principais usadas são HTML, CSS, Javascript, Django / Python e Git.</p>
+                <p>A Proregatta é uma startup onde se desenvolve app's, hardware e plataforma web de gestão de clubes, campeonatos e treinos para o desporto da Vela. Trabalho em equipa no desenvolvimento da plataforma web que premite a criação, gestão e acompanhamento em tempo real de campeonatos, tal como a gestão interna de clubes de Vela e visualização de treinos feitos pelo utilizador. As tecnologias principais usadas são HTML, CSS, Javascript, Django / Python e Git.</p>
             </div>
         </div>
 
         <div class="row info-box">
             <div class="col-sm-4">
-                <h3>Tecnologias</h3>
+                <h3 class="info-box-title" style="animation-delay: 0.4s">Tecnologias</h3>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 info-box-content" style="animation-delay: 0.4s">
                 <p class="semi-bold">Mais confortável</p>
                 <ul>
                     <li>HTML / CSS</li>
                     <li>JavaScript / jQuery</li>
-                    <li>Python / Django</li>
-                    <li>Version Control ( GIT )</li>
+                    <li>Django</li>
+                    <li>Python</li>
                     <li>Java</li>
+                    <li>Version Control ( GIT )</li>
                     <li>#TODO</li>
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 info-box-content" style="animation-delay: 0.4s">
                 <p class="semi-bold">Menos confortável</p>
                 <ul>
                     <li>C</li>
@@ -107,9 +127,9 @@
 
         <div class="row info-box">
             <div class="col-sm-4">
-                <h3>Interesses</h3>
+                <h3 class="info-box-title" style="animation-delay: 0.6s">Interesses</h3>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 info-box-content" style="animation-delay: 0.6s">
                 <p class="semi-bold">Profissionais</p>
                 <ul>
                     <li>Desenvolvimento Web</li>
@@ -117,9 +137,11 @@
                     <li>Inteligência Artificial</li>
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 info-box-content" style="animation-delay: 0.6s">
                 <p class="semi-bold">Pessoais</p>
                 <ul>
+                    <li>Tecnologia</li>
+                    <li>Fotografia</li>
                     <li>Viajar</li>
                     <li>#TODO</li>
                 </ul>
@@ -129,7 +151,7 @@
     </div>
 </section>
 
-<section id="porfolio">
+<section id="portfolio">
     <div class="content">
 
         <h2>Portfólio</h2>
@@ -174,6 +196,7 @@
 </body>
 
 <script>
+
     function myFunction() {
         var menu = document.getElementById("menu");
         var nav = document.getElementsByTagName("nav")[0];
@@ -193,14 +216,48 @@
         return false;
     });
 
-    window.addEventListener('scroll', _.throttle(hideInHomepage,200));
+    window.addEventListener('scroll', _.throttle(scrollingOperations,200));
     
-    function hideInHomepage() {
+    function scrollingOperations() {
         var top = document.getElementById("top");
-        if (top.getBoundingClientRect().top > -300) {
-            document.getElementById("to-top-btn").style.display = "none";
+        var button = document.getElementById("to-top-btn");
+        var about1 = document.getElementById("about1");
+        var about2 = document.getElementById("about2");
+        var portfolio = document.getElementById("portfolio");
+        var contact = document.getElementById("contact");
+
+        var windowHeight = window.innerHeight;
+        var halfWindowHeight = windowHeight/2;
+
+        if (button.className === "scrollTo") {
+            if (top.getBoundingClientRect().top > -50) {
+                button.className += " arrow-down";
+                button.href = "#about1";
+            }
         } else
-            document.getElementById("to-top-btn").style.display = "block";
+            if (button.className === "scrollTo arrow-down") {
+                button.className = "scrollTo";
+                button.href = "#top";
+            }
+
+        if (windowHeight-about1.getBoundingClientRect().top > halfWindowHeight && about1.className === "") {
+            about1.className = "animated";
+            $('#about1 h2').addClass("slide-in-left");
+            $('#about1 .info-box').addClass("fade-in");
+        }
+        if (windowHeight-about2.getBoundingClientRect().top > halfWindowHeight && about2.className === "") {
+            about2.className = "animated";
+            $('#about2 .info-box-title').addClass("slide-in-left");
+            $('#about2 .info-box-content').addClass("fade-in");
+        }
+        if (windowHeight-portfolio.getBoundingClientRect().top > halfWindowHeight && portfolio.className === "") {
+            portfolio.className = "animated";
+            $('#portfolio h2').addClass("slide-in-left");
+        }
+        if (windowHeight-contact.getBoundingClientRect().top > halfWindowHeight && contact.className === "") {
+            contact.className = "animated";
+            $('#contact h2').addClass("slide-in-left");
+        }
     }
 
     $("#menu-btn").on('click', function () {
@@ -208,13 +265,19 @@
         var nav = document.getElementsByTagName("nav")[0];
         if (menu.className === "") {
             menu.className += "responsive";
-            nav.className += "curtain"
+            nav.className += "curtain";
             $(this).addClass("is-active");
         } else {
             menu.className = "";
             nav.className = "";
             $(this).removeClass("is-active");
         }
+    });
+
+    $("#menu a").on('click', function () {
+        $("nav").removeClass("curtain");
+        $("#menu").removeClass("responsive");
+        $("#menu-btn").removeClass("is-active");
     });
 </script>
 

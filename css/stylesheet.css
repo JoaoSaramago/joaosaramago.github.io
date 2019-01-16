@@ -22,10 +22,94 @@ time, mark, audio, video {
 
 /*** End reset styles ***/
 
-/*@font-face {*/
-    /*font-family: Raleway;*/
-    /*src: url("../fonts/Raleway/Raleway-Regular.ttf");*/
-/*}*/
+/*** ANIMATIONS ***/
+
+h2, .info-box-title, .info-box-content, #avatar-img, #avatar-name, #avatar-second,
+#about1 .info-box {
+    opacity: 0;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Standard syntax */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.slide-in-left {
+    animation: slideInLeft .75s ease both;
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Standard syntax */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fadeIn 1s ease both;
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes zoomOut {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Standard syntax */
+@keyframes zoomOut {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.zoom-out {
+    animation: zoomOut .75s ease both;
+}
+
+/*** END ANIMATIONS ***/
+
+
 
 html, body {
     font-family: 'Raleway', sans-serif;
@@ -37,8 +121,9 @@ h1 {
 }
 
 h2 {
-    font-size: 42px;
-    font-weight: 500;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
 }
 
 h3 {
@@ -47,6 +132,11 @@ h3 {
 }
 
 h4 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+h5 {
     font-size: 20px;
     font-weight: 400;
 }
@@ -59,6 +149,28 @@ ul {
     list-style-position: inside;
 }
 
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    h5 {
+        font-size: 17px;
+    }
+
+    p.semi-bold {
+        margin-top: 10px;
+    }
+
+    ul {
+        margin-bottom: 10px;
+    }
+}
+
 .right {
     float: right;
 }
@@ -67,6 +179,13 @@ ul {
     font-weight: 600;
 }
 
+.vertical-center-column {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*** TO TOP BUTTON ***/
+
 #to-top-btn {
     position: fixed;
     bottom: 0;
@@ -74,13 +193,29 @@ ul {
     border: 2px solid black;
     padding: 8px 10px;
     margin: 10px;
-    display: none;
+    transition: 0.3s;
 }
 
 #to-top-btn svg {
     height: 20px;
     width: 20px;
+    fill: black;
+    transition: 0.3s;
 }
+
+#to-top-btn.arrow-down{
+    border-color: white;
+}
+
+#to-top-btn.arrow-down svg {
+    transform: rotate(180deg);
+    fill: white;
+}
+
+/*** END TO TOP BUTTON ***/
+
+
+/*** LANDING PAGE ***/
 
 header {
     width: 100%;
@@ -117,7 +252,7 @@ nav #menu {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
 
     transition: 0.4s;
@@ -140,21 +275,6 @@ nav .icon {
 }
 
 @media screen and (max-width: 600px) {
-    h1 {
-        font-size: 45px;
-    }
-    h3 {
-        margin-bottom: 10px;
-    }
-    h4 {
-        font-size: 19px;
-    }
-    p.semi-bold {
-        margin-top: 10px;
-    }
-    ul{
-        margin-bottom: 10px;
-    }
     nav {
         padding: 20px;
     }
@@ -199,7 +319,7 @@ nav .icon {
     display: inline-block;
 }
 
-header img {
+#avatar-img {
     border-radius: 50%;
     display: block;
     width: 200px;
@@ -207,14 +327,16 @@ header img {
     margin: auto;
 }
 
-header h1 {
+#avatar-name {
     text-align: center;
     margin-top: 20px;
+    transition-delay: 0.2s;
 }
 
-header h4 {
+#avatar-second {
     text-align: center;
     margin-top: 5px;
+    transition-delay: 0.4s;
 }
 
 .cv-btn {
@@ -233,27 +355,22 @@ header h4 {
     transition: 0.2s;
 }
 
-#about {
-    width: 100%;
-    background-color: #f1f1f1;
-}
+/*** END LANDING PAGE ***/
 
-#porfolio {
-    width: 100%;
-    height: 100vh;
-    background-color: lightgray;
-}
-
-#contact {
-    width: 100%;
-    height: 100vh;
-    background-color: #f1f1f1;
-}
+/*** PAGES ***/
 
 .content {
     max-width: 1280px;
     margin:auto;
-    padding: 100px 60px;
+    padding: 96px 60px;
+}
+
+.info-box {
+    margin-top: 60px;
+}
+
+.info-box ul {
+    margin-top: 15px;
 }
 
 @media screen and (max-width: 768px) {
@@ -265,13 +382,57 @@ header h4 {
     }
 }
 
-.info-box {
-    margin-top: 80px;
+/*** END PAGES ***/
+
+/*** ABOUT PAGE ***/
+
+#about1 {
+    background-color: #e2e2e2;
 }
 
-.info-box ul {
-    margin-top: 15px;
+#about-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 7px solid white;
+    margin-right: 50px;
+    vertical-align: middle;
 }
+
+#about1 .info-box {
+    text-align: center;
+}
+
+.about-me-box {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+#about2 {
+    background-color: #f1f1f1;
+}
+
+#about2 .row:first-child {
+    margin-top: 0;
+}
+
+/*** END ABOUT PAGE ***/
+
+#portfolio {
+    width: 100%;
+    height: 100vh;
+    background-color: lightgray;
+}
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+/*** FOOTER ***/
 
 footer {
     background-color: #4e4e4e;
@@ -301,6 +462,8 @@ footer p {
 
     transition: 0.3s;
 }
+
+/*** END FOOTER ***/
 
 
 /****************** Menu button *******************/
