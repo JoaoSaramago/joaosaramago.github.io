@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133275763-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133275763-1');
+    </script>
+
     <meta charset="utf-8">
     <title>João Saramago | Developer</title>
     <meta name="description" content="João Saramago online professional resume.">
@@ -22,34 +33,31 @@
 
 <body>
 
-<a id="to-top-btn" class="scrollTo arrow-down" href="#about1">
-    <svg viewBox="0 0 64 64">
-        <use xlink:href="svg/ui-icons.svg#up-arrow"></use>
-    </svg>
-</a>
+<nav class="fade-in full-nav">
+    <a href="#top" class="scrollTo">
+        <svg class="logo" viewBox="0 0 64 40">
+            <use xlink:href="svg/logo.svg#logo"></use>
+        </svg>
+    </a>
+    <div id="menu-btn" class="icon">
+        <div class="menu-btn-box">
+            <div class="menu-btn-inner"></div>
+        </div>
+    </div>
+    <div id="menu">
+        <a class="scrollTo" href="#about1">SOBRE</a>
+        <a class="scrollTo" href="#portfolio">PORTFÓLIO</a>
+        <a class="scrollTo" href="#contact">CONTACTO</a>
+        <a class="cv-btn" href="">DESCARREGAR RESUMO</a>
+
+    </div>
+</nav>
 
 <header id="top">
-    <nav class="fade-in">
-        <div id="menu-btn" class="icon">
-            <div class="menu-btn-box">
-                <div class="menu-btn-inner"></div>
-            </div>
-        </div>
-        <div class="right">
-            <div id="menu">
-                <a class="scrollTo" href="#about1">SOBRE</a>
-                <a class="scrollTo" href="#portfolio">PORTFÓLIO</a>
-                <a class="scrollTo" href="#contact">CONTACTO</a>
-                <a class="cv-btn" href="">DESCARREGAR RESUMO</a>
-
-            </div>
-        </div>
-    </nav>
-
     <div class="avatar-wrapper">
         <img id="avatar-img" class="zoom-out" src="img/avatar.jpg"/>
         <h1 id="avatar-name" class="zoom-out">João Saramago</h1>
-        <h5 id="avatar-second" class="zoom-out">Desenvolvedor Full Stack</h5>
+        <h5 id="avatar-second" class="zoom-out">Desenvolvedor de Software</h5>
     </div>
 </header>
 
@@ -64,7 +72,7 @@
                 <div class="about-me-box">
                     <h4>Quem sou eu?</h4>
                     <p>
-                        Estou atualmente a acabar a minha licenciatura em Engenharia Informatica
+                        Chamo-me João Saramago, tenho 21 anos e sou de Torres Vedras. Estou atualmente no último ano da minha licenciatura em Engenharia Informatica
                         no ISCTE e a trabalhar em part-time como desenvolvedor full stack para a
                         Proregatta.
                     </p>
@@ -190,7 +198,7 @@
             </svg>
         </a>
     </div>
-    <p class="small">© 2019 João Saramago. Todos os direitos reservados..</p>
+    <p class="small">© 2019 João Saramago. Todos os direitos reservados.</p>
 </footer>
 
 </body>
@@ -217,59 +225,55 @@
     });
 
     window.addEventListener('scroll', _.throttle(scrollingOperations,200));
-    
+
     function scrollingOperations() {
         var top = document.getElementById("top");
-        var button = document.getElementById("to-top-btn");
         var about1 = document.getElementById("about1");
         var about2 = document.getElementById("about2");
         var portfolio = document.getElementById("portfolio");
         var contact = document.getElementById("contact");
 
         var windowHeight = window.innerHeight;
-        var halfWindowHeight = windowHeight/2;
+        var triggerHeight = windowHeight / 3;
 
-        if (button.className === "scrollTo") {
-            if (top.getBoundingClientRect().top > -50) {
-                button.className += " arrow-down";
-                button.href = "#about1";
-            }
-        } else
-            if (button.className === "scrollTo arrow-down") {
-                button.className = "scrollTo";
-                button.href = "#top";
-            }
+        if (top.getBoundingClientRect().top > -20) {
+            if ($('nav').hasClass("compact-nav"))
+                $('nav').removeClass("compact-nav").addClass("full-nav");
+        } else {
+            if ($('nav').hasClass("full-nav"))
+                $('nav').removeClass("full-nav").addClass("compact-nav");
+        }
 
-        if (windowHeight-about1.getBoundingClientRect().top > halfWindowHeight && about1.className === "") {
+        if (windowHeight-about1.getBoundingClientRect().top > triggerHeight && about1.className === "") {
             about1.className = "animated";
             $('#about1 h2').addClass("slide-in-left");
             $('#about1 .info-box').addClass("fade-in");
         }
-        if (windowHeight-about2.getBoundingClientRect().top > halfWindowHeight && about2.className === "") {
+        if (windowHeight-about2.getBoundingClientRect().top > triggerHeight && about2.className === "") {
             about2.className = "animated";
             $('#about2 .info-box-title').addClass("slide-in-left");
             $('#about2 .info-box-content').addClass("fade-in");
         }
-        if (windowHeight-portfolio.getBoundingClientRect().top > halfWindowHeight && portfolio.className === "") {
+        if (windowHeight-portfolio.getBoundingClientRect().top > triggerHeight && portfolio.className === "") {
             portfolio.className = "animated";
             $('#portfolio h2').addClass("slide-in-left");
         }
-        if (windowHeight-contact.getBoundingClientRect().top > halfWindowHeight && contact.className === "") {
+        if (windowHeight-contact.getBoundingClientRect().top > triggerHeight && contact.className === "") {
             contact.className = "animated";
             $('#contact h2').addClass("slide-in-left");
         }
     }
 
     $("#menu-btn").on('click', function () {
-        var menu = document.getElementById("menu");
-        var nav = document.getElementsByTagName("nav")[0];
-        if (menu.className === "") {
-            menu.className += "responsive";
-            nav.className += "curtain";
+        var $menu = $("#menu");
+        var $nav = $("nav");
+        if ($menu.hasClass("responsive")) {
+            $menu.removeClass("responsive");
+            $nav.removeClass("curtain");
             $(this).addClass("is-active");
         } else {
-            menu.className = "";
-            nav.className = "";
+            $menu.addClass("responsive");
+            $nav.addClass("curtain");
             $(this).removeClass("is-active");
         }
     });
