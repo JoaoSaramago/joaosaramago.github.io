@@ -1,0 +1,150 @@
+/** For screen preview **/
+@media screen {
+    html, body {
+        background-color: rgba(0, 0, 0, 0.5);
+
+    }
+
+    #background-image {
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../img/drone-beach.jpg") no-repeat center;
+        background-size: cover;
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        height: 100%;
+    }
+
+    .sheet {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+    }
+}
+
+html, body {
+    font-family: 'Raleway', sans-serif;
+    color: #424242;
+    height: 100%;
+
+}
+
+h2 {
+    font-size: 1.09rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 33px;
+}
+
+div h2:first-child {
+    margin-top: 0;
+}
+
+p, li, a {
+    font-size: 0.8rem;
+    line-height: 19px;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    margin: 30px 0;
+    clear: both;
+}
+
+ul {
+    padding-left: 17px;
+}
+
+ul li {
+    margin-top: 10px;
+}
+
+ul li:first-child {
+    margin-top: 0;
+}
+
+ul small {
+    display: block;
+    margin: 0;
+    font-size: 0.65rem;
+    line-height: 14px;
+}
+
+.avatar-wrapper {
+    width: 100%;
+    letter-spacing: 4px;
+}
+
+#avatar-img {
+    border-radius: 50%;
+    display: block;
+    width: 120px;
+    border: 5px solid white;
+    margin: auto;
+
+    -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+}
+
+#avatar-name {
+    text-align: center;
+    margin: 23px 0 10px 0;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+#avatar-second {
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.75rem;
+}
+
+.col-left, .col-right {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+    height: 736px;
+}
+
+.col-left {
+    border-right: 1px solid #ccc;
+    padding-right: 27px;
+}
+
+.col-right {
+    padding-left: 27px;
+}
+
+.justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.logo {
+    width: 37px;
+    height: 40px;
+    margin-left: -7px;
+    fill: #424242;
+}
+
+.links-wrapper {
+    margin-top: 20px;
+}
+
+.link-box svg, .link-box a {
+    display: inline-block;
+    vertical-align: middle;
+}
