@@ -182,19 +182,55 @@
 
         <h2>Portfólio</h2>
 
+        <p>Em Construção</p>
+
     </div>
 </section>
 
 <section id="contact">
     <div class="content">
 
-        <h2>Contacto</h2>
+        <!--<h2>Contacto</h2>-->
+
+        <div class="row info-box">
+            <div class="col-sm-4">
+                <h2 class="info-box-title">E-mail</h2>
+            </div>
+            <div class="col-sm-8">
+                <h2 class="info-box-content" style="font-weight: normal">
+                    <a href="mailto:jgvsaramago@gmail.com">jgvsaramago@gmail.com</a>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row info-box">
+            <div class="col-sm-4">
+                <h2 class="info-box-title" style="animation-delay: 0.2s">LinkedIn</h2>
+            </div>
+            <div class="col-sm-8">
+                <h2 class="info-box-content" style="font-weight: normal; animation-delay: 0.2s">
+                    <a href="https://linkedin.com/in/jgvsaramago" target="_blank">linkedin.com/in/jgvsaramago</a>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row info-box">
+            <div class="col-sm-4">
+                <h2 class="info-box-title" style="animation-delay: 0.4s">GitHub</h2>
+            </div>
+            <div class="col-sm-8">
+                <h2 class="info-box-content" style="font-weight: normal; animation-delay: 0.4s">
+                    <a href="https://github.com/JoaoSaramago" target="_blank">github.com/JoaoSaramago</a>
+                </h2>
+            </div>
+        </div>
 
     </div>
+
 </section>
 
 <footer>
-    <div class="social-icons-list">
+    <!--<div class="social-icons-list">
         <a class="social-icon" href="">
             <svg viewBox="0 0 64 64">
                 <use xlink:href="svg/ui-icons.svg#linkedin"></use>
@@ -210,7 +246,7 @@
                 <use xlink:href="svg/github.svg#logo"></use>
             </svg>
         </a>
-    </div>
+    </div>-->
     <p class="small">© 2022 João Saramago. Todos os direitos reservados.</p>
 </footer>
 
@@ -273,7 +309,9 @@
         }
         if (windowHeight-contact.getBoundingClientRect().top > triggerHeight && contact.className === "") {
             contact.className = "animated";
-            $('#contact h2').addClass("slide-in-left");
+            //$('#contact h2').addClass("slide-in-left");
+            $('#contact .info-box-title').addClass("slide-in-left");
+            $('#contact .info-box-content').addClass("fade-in");
         }
     }
 
