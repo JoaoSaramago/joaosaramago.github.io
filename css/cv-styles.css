@@ -18,6 +18,10 @@
         filter: blur(8px);
         -webkit-filter: blur(8px);
         height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
     }
 
     .content-wrapper {
@@ -85,7 +89,7 @@ h2 {
     font-size: 1.09rem;
     font-weight: 500;
     letter-spacing: 0.5px;
-    margin-top: 33px;
+    margin-top: 25px;
 }
 
 div h2:first-child {
